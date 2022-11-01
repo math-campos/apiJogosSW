@@ -37,7 +37,7 @@ router.post('/login', function (req, res) {
 });
 
 /* GET retornar lista de todos os jogos. */
-router.get('/Jogos', verificaToken, function (req, res, next) {
+router.get('/Jogos', function (req, res, next) {
     res.send(DAO.all());
 });
 

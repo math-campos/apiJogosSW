@@ -17,3 +17,24 @@ curl --location --request GET 'http://localhost:3000/api/Jogos' \
     "nome": "Teste inserção",
     "ano": 2022
 }'
+
+Buscar jogos não requer autenticação
+Realizar inserções requer autenticação utilizando a seguinte chamada:
+
+curl --location --request POST 'localhost:3000/api/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "user": "matheus",
+    "pass": "senha123"
+}'
+
+Após autenticação, inserir token retornado nos headers da seguinte chamada:
+
+curl --location --request POST 'localhost:3000/api/Jogos' \
+--header 'authorization: TOKEN_RECEBIDO_AQUI' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": 0,
+    "nome": "Teste inserção",
+    "ano": 2022
+}'
