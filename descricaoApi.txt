@@ -1,0 +1,19 @@
+Api para cadastro de Jogos
+
+Método GET retorna listagem de Jogos cadastrados
+
+Exemplo de GET:
+
+curl --location --request GET 'http://localhost:3000/api/Jogos'
+
+Método POST insere um Jogo, passado por parâmetro, na listagem de jogos
+
+Exemplo de POST:
+
+curl --location --request GET 'http://localhost:3000/api/Jogos' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": 0,
+    "nome": "Teste inserção",
+    "ano": 2022
+}'
